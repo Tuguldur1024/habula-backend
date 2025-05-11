@@ -10,6 +10,7 @@ export type ReportShow = {
   imageUrl : string;
   location: Location;
   description: string;
+  type: string;
   countLike : number;
   createdAt: Date;
   updatedAt: Date;
@@ -21,6 +22,7 @@ const ReportShowSchema = new Schema<ReportShow>({
       type: { type: String, enum: ["Point"], required: true },
       coordinates: { type: [Number], required: true },
     },
+    type: { type: String, required: true },
     countLike: { type: Number, default: 0 },
     description: { type: String, required: true },
     createdAt: { type: Date, default: Date.now },
